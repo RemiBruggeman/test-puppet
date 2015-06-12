@@ -14,6 +14,7 @@ node 'mail.test.local' {
 }
 node 'db.test.local' {
 	include base
+	include mysql
 }
 node 'default' {
 	include base
