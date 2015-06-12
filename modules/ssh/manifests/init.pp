@@ -36,6 +36,9 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class ssh {
-
+  class { '::ssh::package': } ->
+  class { '::ssh::config': }  ->
+  class { '::ssh::service': } ->
+  Class['ssh']
 
 }
