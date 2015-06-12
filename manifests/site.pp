@@ -10,6 +10,7 @@ node 'puppet.test.local' {
 }
 node 'mail.test.local' {
 	include base
+	include postfix
 }
 node 'db.test.local' {
 	include base
