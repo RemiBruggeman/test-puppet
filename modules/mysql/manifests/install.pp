@@ -1,12 +1,12 @@
 class mysql::install (
   $user,
-  $group
+  $group,
 ){
     $mysql_pkgs = ['mysql5', 'mysql5client', 'mysql5rt', 'mysql5test', 'mysql5devel' ]
     package { $mysql_pkg:
       ensure  => present,
       require => User[$user],
-    } 
+    }
     user { $user:
       ensure  => present,
       comment => 'MySQL user',

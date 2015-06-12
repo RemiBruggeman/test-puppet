@@ -39,7 +39,7 @@ class mysql (
   $group           = 'mysal',
   $service_enabled = true,
   $service_running = true,
-  $user            = 'mysql'
+  $user            = 'mysql',
 ){
   class { 'mysql::install':
     user  => $user,
