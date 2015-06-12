@@ -1,5 +1,5 @@
 class ssh::config {
-  file "/etc/ssh/ssh_config":
+  file {"$::ssh::params::ssh_service_config":
     ensure  => present,
     owner   => 'root',
     group   => 'root',
@@ -7,4 +7,5 @@ class ssh::config {
     source  => 'puppet:///modules/ssh/sshd_config',
     require => Class["ssh::package"],
     notify  => Class["ssh::service"],
+  }
 }
