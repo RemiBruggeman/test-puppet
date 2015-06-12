@@ -1,12 +1,15 @@
 class base {
 	include sudo
 	include ssh
+	include puppet
 }
 node 'gateway.test.local' {
 	include base
+	#include firewall (write firewall module for iptables)
 }
 node 'puppet.test.local' {
 	include base
+	include puppet::master
 }
 node 'mail.test.local' {
 	include base
